@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(168, 199, 214);
+}
+#heading{
+    text-align: center;
+}
+#form{
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: blanchedalmond;
+    
+}
+.label{
+    width:100px;
+    display: inline-block;
+}
+.align-text{
+    text-align: center;
+
+}
