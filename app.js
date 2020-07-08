@@ -4,12 +4,16 @@ const form = document.getElementById("form");
 const btn = document.getElementById("btn")
 const divMeme = document.getElementById("meme")
 
-//form.addEventListener('submit', (e) => {
-    btn.addEventListener('click',(e)=>{
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    //btn.addEventListener('click',(e)=>{
     const canvas = document.createElement('canvas')
+    const memeBlock=document.createElement('div')
     const imageUrl = document.getElementById("url").value;
     const textOnTop = document.getElementById("textontop").value
-const textOnBottom = document.getElementById("textonbottom").value
+const textOnBottom = document.getElementById("textonbottom").value;
+form.reset();
+
     const ctx = canvas.getContext('2d');
      const removeMeme= document.createElement('button')
     removeMeme.innerHTML="Remove Meme"
@@ -33,17 +37,17 @@ const textOnBottom = document.getElementById("textonbottom").value
     
     }
     canvas.append(image);
+    memeBlock.append(canvas);
+    memeBlock.append(removeMeme);
+    //divMeme.append(canvas)
+    divMeme.append(memeBlock)
     
-    divMeme.append(removeMeme);
-    divMeme.append(canvas);
-    imageUrl.value=" ";
-    textOnTop.value=" ";
-    textOnBottom.value=" ";
+    
     removeMeme.addEventListener('click',(e)=>{
-        console.log(canvas);
-        console.log(image)
-        divMeme.remove(canvas)
-        canvas.remove(image)
+    
+        canvas.remove(image);
+        memeBlock.remove(removeMeme);
+       
     })
 
     }
